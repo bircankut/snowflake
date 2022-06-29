@@ -1,0 +1,8 @@
+.cities{
+  height: 50px;
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,6 @@
+.logo{
+  display: grid;
+  place-content: center;
+  height: 50px;
+  width: 50px;
+}
