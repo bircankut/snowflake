@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import { Header } from '../src/containers/header/header'
 import useSWR from 'swr';
 
-const Cities: { [key: string]: string; } = {
+const TimeZones: { [key: string]: string; } = {
   'Berlin': 'Europe/Berlin',
   'London': 'Europe/London',
   'Tokyo': 'Asia/Tokyo',
@@ -17,7 +17,7 @@ const City = () => {
   const day = new Date().toLocaleString('en-us', {  weekday: 'long' });
   return (
     <div>
-      <Header day={day} city={Cities[`${city}`]}/>
+      <Header day={day} timeZone={TimeZones[`${city}`]}/>
       <p>City: {city}</p>
       {data?.current?.temp_c}
     </div>

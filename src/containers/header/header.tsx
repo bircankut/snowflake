@@ -6,15 +6,15 @@ import {DateInformation} from "../../components/date-information/date-informatio
 
 interface HeaderProps {
   day: string;
-  city: string;
+  timeZone: string;
 }
 
-const Header = ({day, city}: HeaderProps) => {
+const Header = ({day, timeZone}: HeaderProps) => {
   return (
     <header className={style.header}>
       <Logo/>
       <Cities/>
-      <DateInformation day={day} city={city}/>
+      <DateInformation day={day} timeZone={timeZone}/>
     </header>
   );
 };

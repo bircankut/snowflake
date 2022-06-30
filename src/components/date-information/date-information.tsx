@@ -1,24 +1,17 @@
 import React from "react";
+import { Clock } from "../clock/clock";
 import style from './date-information.module.css'
 
 interface DateInformationProps {
   day: string;
-  city: string;
+  timeZone: string;
 }
 
-const DateInformation = ({day, city}: DateInformationProps) => {
-    let date = new Date();
-    const formatter = new Intl.DateTimeFormat([],{
-      timeZone: city,
-      hour: 'numeric',
-      minute: 'numeric',
-      second: 'numeric',
-    });
-    const time = formatter.format(date);
-
+const DateInformation = ({day, timeZone}: DateInformationProps) => {
   return (
     <div className={style.date}>
-      {day} {time}
+      {day}
+      <Clock timeZone={timeZone}/>
     </div>
   );
 };
