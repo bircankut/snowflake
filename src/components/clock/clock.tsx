@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import style from './date.module.css'
+import style from './clock.module.css'
 
 interface ClockProps {
   timeZone: string;
@@ -18,7 +18,7 @@ const Clock = ({timeZone}: ClockProps) => {
       second: 'numeric',
     });
     setFormatter(_formatter)
-  }, []);
+  }, [timeZone]);
 
   useEffect(() => {
     const _intervalId = setInterval(() => {
@@ -36,7 +36,7 @@ const Clock = ({timeZone}: ClockProps) => {
   const timeText = formatter && formatter.format(time);
 
   return (
-    <div>
+    <div className={style.clock}>
       {timeText}
     </div>
   );

@@ -10,7 +10,7 @@ interface DateInformationProps {
 const DateInformation = ({day, timeZone}: DateInformationProps) => {
   return (
     <div className={style.date}>
-      {day}
+      <span className={style.dateText}>{day}</span>
       <Clock timeZone={timeZone}/>
     </div>
   );

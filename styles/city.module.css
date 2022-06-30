@@ -1,0 +1,10 @@
+.city {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.context{
+  height: calc(100vh - 50px);
+  background-color:rgba(55,52,77,0.95) ;
+}
