@@ -7,19 +7,19 @@ interface CitiesProps {}
 
 const Cities = ({}: CitiesProps) => {
   return(
-    <ul className={style.cities}>
+    <ul className={`${style.cities} ${style.font}`}>
       <li>
-        <Link href="/berlin/berlin">
+        <Link href="/berlin">
           <a>Berlin</a>
         </Link>
       </li>
       <li>
-        <Link href="/london/london">
+        <Link href="/london">
           <a>London</a>
         </Link>
       </li>
       <li>
-        <Link href="/tokyo/tokyo">
+        <Link href="/tokyo">
           <a>Tokyo</a>
         </Link>
       </li>

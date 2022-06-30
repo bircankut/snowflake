@@ -5,9 +5,10 @@ import { Header } from '../src/containers/header/header'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
+  const day = new Date().toLocaleString('en-us', {  weekday: 'long' });
   return (
     <div className={styles.container}>
-      <Header/>
+      <Header />
     </div>
   )
 }
