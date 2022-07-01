@@ -1,8 +1,8 @@
 import React from "react"
-import style from './weather-information.module.css'
+import style from './information.module.css'
 import {Data} from "../../types/types";
 
-interface WeatherInformationProps {
+interface InformationProps {
   city: string;
   data: Data;
 }
@@ -66,9 +66,9 @@ export const ICONS: { [key: string]: string } = {
   'Clear': '/icons/clear.png',
 }
 
-const WeatherInformation = ({data, city}: WeatherInformationProps) => {
+const Information = ({data, city}: InformationProps) => {
   return(
-    <div className={style.weatherInformation}>
+    <div className={style.information}>
       <div className={style.cityTemputureBox}>
         <img className={style.icons} src={ICONS[data?.current?.condition.text]} alt="weather icon"/>
         <span className={style.weatherTemperature}>{data?.current?.temp_c}&deg;</span>
@@ -82,4 +82,4 @@ const WeatherInformation = ({data, city}: WeatherInformationProps) => {
   )
 }
 
-export { WeatherInformation };
+export { Information };
