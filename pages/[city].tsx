@@ -2,14 +2,12 @@ import { useRouter } from 'next/router'
 import { Header } from '../src/containers/header/header'
 import useSWR from 'swr'
 import style from '../styles/city.module.css'
+import { WeatherInformation } from '../src/components/weather-information/weather-information'
 
 const TimeZones: { [key: string]: string; } = {
   'Berlin': 'Europe/Berlin',
   'London': 'Europe/London',
   'Tokyo': 'Asia/Tokyo',
-}
-const images: { [key: string]: string; } = {
-  'Berlin': '/Berlin.jpg',
 }
 
 const City = () => {
@@ -24,8 +22,7 @@ const City = () => {
     <div className={style.city} style={{backgroundImage: `url("/${city}.jpg")`}}>
       <Header day={day} timeZone={TimeZones[city as string]}/>
       <div className={style.context}>
-        <p>City: {city}</p>
-        {data?.current?.temp_c}
+        <WeatherInformation data={data} city={city}/>
       </div>
     </div>
   )
