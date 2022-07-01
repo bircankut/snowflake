@@ -26,7 +26,7 @@ const City = () => {
       <div className={style.context}>
         <Information data={data} city={city}/>
         <WeatherInformations/>
-        <WeeklyWeather/>
+        <WeeklyWeather city={city}/>
       </div>
     </div>
   )
