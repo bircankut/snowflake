@@ -3,15 +3,47 @@
   flex-direction: row;
   justify-content: center;
   height: 30%;
-  background-color: antiquewhite;
 }
 .cityTemputureBox {
   display: flex;
   flex-direction: row;
-  background-color: aqua;
+  align-items: center;
+  padding: 20px;
 }
 .cityInformationBox {
   display: flex;
   flex-direction: column;
-  background-color: firebrick;
+  justify-content: center;
+  padding: 20px;
+}
+
+.weatherTemperature {
+  font-size: 100px;
+  font-family: 'Montserrat', sans-serif;
+  color: #fafafa;
+}
+.icons {
+  height: 50%;
+  width: 50%;
+}
+
+.cityText {
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+  color: #fafafa;
+  letter-spacing: 10px;
+}
+.weatherText {
+  font-size: 15px;
+  font-style: italic;
+  font-family: 'Montserrat', sans-serif;
+  color: #fafafa;
+  margin-bottom: 5px;
+}
+.line {
+  height: 80px;
+  width: 2px;
+  background-color: #4B485E;
+  margin-top: 45px;
 }
