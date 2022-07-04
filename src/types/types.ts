@@ -48,7 +48,7 @@ interface ForecastDay {
   date_epoch: number;
   day: Day;
   astro: unknown;
-  hour: unknown;
+  hour: Hour[];
 }
 
 interface Day{
@@ -67,4 +67,38 @@ interface Day{
   avghumidity: number,
   condition: Condition,
   uv: number,
+}
+
+interface Hour {
+  time_epoch: number,
+  time: string,
+  temp_c: number,
+  temp_f: number,
+  condition: Condition,
+  wind_mph: number,
+  wind_kph: number,
+  wind_degree: number,
+  wind_dir: number,
+  pressure_mb: number,
+  pressure_in: number,
+  precip_mm: number,
+  humidity: number,
+  cloud: number,
+  feelslike_c: number,
+  feelslike_f: number,
+  windchill_c: number,
+  windchill_f: number,
+  heatindex_c: number,
+  heatindex_f: number,
+  dewpoint_c: number,
+  dewpoint_f: number,
+  will_it_rain: number,
+  will_it_snow: number,
+  is_day: number,
+  vis_km: number,
+  vis_miles: number,
+  chance_of_rain: number,
+  chance_of_snow: number,
+  gust_mph: number,
+  gust_kph: number,
 }

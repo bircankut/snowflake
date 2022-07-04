@@ -25,7 +25,7 @@ const City = () => {
       <Header day={day} timeZone={TimeZones[city as string]}/>
       <div className={style.context}>
         <Information data={data} city={city}/>
-        <WeatherInformations/>
+        <WeatherInformations city={city}/>
         <WeeklyWeather city={city}/>
       </div>
     </div>
