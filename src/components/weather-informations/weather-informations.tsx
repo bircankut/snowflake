@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import style from './weather-informations.module.css'
 import useSWR from "swr"
 import {HistoryResponse} from "../../types/types"
@@ -10,9 +10,10 @@ import {
   LineElement,
   Title,
   Tooltip,
-  Legend,
+  Legend, ChartOptions, LegendOptions,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 ChartJS.register(
   CategoryScale,
@@ -21,7 +22,8 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  ChartDataLabels
 );
 
 interface WeatherInformationsProps {
@@ -29,12 +31,12 @@ interface WeatherInformationsProps {
 }
 
 const options = {
-  legend: {
-    display: false
-  },
   maintainAspectRatio: false,
   scales: {
     x: {
+      ticks: {
+        color: '#918aa0'
+      },
       grid: {
         display: false,
         drawBorder: false,
@@ -55,11 +57,24 @@ const options = {
     title: {
       display: true,
       text: ' ',
+    },
+    datalabels: {
+      color: '#918aa0',
+      align: 'top',
+      offset: 15,
+    },
+    legend: {
+      display: false
     }
-  }
+  },
 };
 
 const WeatherInformations = ({city}: WeatherInformationsProps) => {
+  const [selectedData, setSelectedData]= useState('temperature');
+
+  function select(sel: string){
+    setSelectedData(sel);
+  }
   const date  = new Date();
   const endTime = new Date(date.getFullYear(), date.getMonth(), date.getDate()).toJSON().slice(0,10);
 
@@ -72,17 +87,20 @@ const WeatherInformations = ({city}: WeatherInformationsProps) => {
         .toLocaleTimeString('en-US',
           {timeZone:'UTC',hour12:true, hour:'numeric'}
         ),
-      temp: day.temp_c
+      temperature: day.temp_c,
+      wind: day.wind_mph,
+      precepitation: day.precip_mm,
     }
-  ))
+  )).filter((el, index) => index % 3 === 0)
 
   const dt = {
     labels: time?.map((el)=>el.time),
     datasets: [
       {
         label: '',
-        data: time?.map((el)=>el.temp),
-        borderColor: '#41006c',
+        data: time?.map((el)=> el[selectedData as keyof typeof el] || el.temperature),
+        color: '#918aa0',
+        borderColor: '#820BBB',
         backgroundColor: 'white',
         pointStyle: 'circle',
         pointRadius: 4,
@@ -93,7 +111,13 @@ const WeatherInformations = ({city}: WeatherInformationsProps) => {
 
   return(
     <div className={style.weatherInformations}>
-      <Line data={dt} options={options} updateMode={"resize"} height={"100%"} />
+      <Line data={dt} options={options as any} updateMode={"resize"} height={"100%"} />
+      <hr className={style.hr}/>
+      <div className={style.buttonBox}>
+        <button className={selectedData === 'temperature' ? `${style.buttonSelected}`: `${style.button}`} onClick={()=> select('temperature')}>Temperature</button>
+        <button className={selectedData === 'precepitation' ? `${style.buttonSelected}`: `${style.button}`} onClick={()=> select('precepitation')}>Precepitation</button>
+        <button className={selectedData === 'wind' ? `${style.buttonSelected}`: `${style.button}`} onClick={()=> select('wind')}>Wind</button>
+      </div>
     </div>
   )
 }

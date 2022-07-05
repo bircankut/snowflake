@@ -7,14 +7,15 @@ import { WeeklyWeather } from '../src/components/weekly-weather/weekly-weather'
 import {WeatherInformations} from "../src/components/weather-informations/weather-informations";
 
 const TimeZones: { [key: string]: string; } = {
-  'Berlin': 'Europe/Berlin',
-  'London': 'Europe/London',
-  'Tokyo': 'Asia/Tokyo',
+  'berlin': 'Europe/Berlin',
+  'london': 'Europe/London',
+  'tokyo': 'Asia/Tokyo',
 }
 
 const City = () => {
   const router = useRouter()
-  const { city } = router.query;
+  let { city } = router.query;
+  city = ((city as string) || "").toLowerCase();
 
   const fetcher = (url: string) => fetch(url).then((r) => r.json());
   const { data } = useSWR(`/api/current?q=${city}`, fetcher);
@@ -24,9 +25,9 @@ const City = () => {
     <div className={style.city} style={{backgroundImage: `url("/${city}.jpg")`}}>
       <Header day={day} timeZone={TimeZones[city as string]}/>
       <div className={style.context}>
-        <Information data={data} city={city}/>
-        <WeatherInformations city={city}/>
-        <WeeklyWeather city={city}/>
+        <Information data={data} city={city as string}/>
+        <WeatherInformations city={city as string}/>
+        <WeeklyWeather city={city as string}/>
       </div>
     </div>
   )

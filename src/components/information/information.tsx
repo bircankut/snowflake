@@ -8,9 +8,9 @@ interface InformationProps {
 }
 
 const Countries: { [key: string]: string; } = {
-  'Berlin': 'BERLIN, DE',
-  'London': 'LONDON, UK',
-  'Tokyo': 'TOKYO, JP',
+  'berlin': 'BERLIN, DE',
+  'london': 'LONDON, UK',
+  'tokyo': 'TOKYO, JP',
 }
 
 export const ICONS: { [key: string]: string } = {

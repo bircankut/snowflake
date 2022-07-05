@@ -9,17 +9,17 @@ const Cities = ({}: CitiesProps) => {
   return(
     <ul className={`${style.cities} ${style.font}`}>
       <li>
-        <Link href="/Berlin">
+        <Link href="/berlin">
           <a>Berlin</a>
         </Link>
       </li>
       <li>
-        <Link href="/London">
+        <Link href="/london">
           <a>London</a>
         </Link>
       </li>
       <li>
-        <Link href="/Tokyo">
+        <Link href="/tokyo">
           <a>Tokyo</a>
         </Link>
       </li>

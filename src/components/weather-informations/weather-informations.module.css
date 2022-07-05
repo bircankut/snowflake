@@ -1,4 +1,28 @@
 .weatherInformations {
-  height: 45%;
-  border:2px solid white;
+  height: 38%;
+  padding: 0 100px;
+  margin-bottom: 40px;
+}
+.buttonBox{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.button{
+  background-color: transparent;
+  border: none;
+  color: darkgrey;
+  margin:0px 10px;
+}
+.buttonSelected{
+  background-color: transparent;
+  border: none;
+  color: #fafafa;
+  margin:0px 10px;
+  border-bottom: 1px solid white;
+}
+.hr{
+  display: block; height: 1px;
+  border: 0; border-top: 1px solid #918aa0;
+   padding: 0;
 }
