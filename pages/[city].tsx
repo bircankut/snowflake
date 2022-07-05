@@ -1,10 +1,16 @@
+import { Suspense } from 'react'
 import { useRouter } from 'next/router'
+import dynamic from 'next/dynamic'
 import { Header } from '../src/containers/header/header'
 import useSWR from 'swr'
 import style from '../styles/city.module.css'
 import { Information } from '../src/components/information/information'
 import { WeeklyWeather } from '../src/components/weekly-weather/weekly-weather'
-import {WeatherInformations} from "../src/components/weather-informations/weather-informations";
+
+const DynamicWeatherInformations = dynamic(() => import("../src/components/weather-informations/weather-informations"), {
+  suspense: true,
+  ssr: false
+});
 
 const TimeZones: { [key: string]: string; } = {
   'berlin': 'Europe/Berlin',
@@ -26,7 +32,9 @@ const City = () => {
       <Header day={day} timeZone={TimeZones[city as string]}/>
       <div className={style.context}>
         <Information data={data} city={city as string}/>
-        <WeatherInformations city={city as string}/>
+        <Suspense fallback="...">
+          <DynamicWeatherInformations city={city as string} />
+        </Suspense>
         <WeeklyWeather city={city as string}/>
       </div>
     </div>

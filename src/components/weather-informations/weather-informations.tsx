@@ -70,7 +70,7 @@ const options = {
 };
 
 const WeatherInformations = ({city}: WeatherInformationsProps) => {
-  const [selectedData, setSelectedData]= useState('temperature');
+  const [selectedData, setSelectedData] = useState('temperature');
 
   function select(sel: string){
     setSelectedData(sel);
@@ -93,29 +93,13 @@ const WeatherInformations = ({city}: WeatherInformationsProps) => {
     }
   )).filter((el, index) => index % 3 === 0)
 
-
-
-  const color = useMemo(() => {
-    if (typeof document === 'undefined') {
-      return;
-    }
-
-    // @ts-ignore
-    var ctx = document.getElementById('line-chart').getContext("2d")
-    var gradient = ctx.createLinearGradient(0, 0, 0, 400);
-    gradient.addColorStop(0, '#6b0098');
-    gradient.addColorStop(1, '#b44dbd');
-    return gradient;
-  }, [])
-
-
   const dt = {
     labels: time?.map((el)=>el.time),
     datasets: [
       {
         label: '',
         data: time?.map((el)=> el[selectedData as keyof typeof el] || el.temperature),
-        borderColor: color || 'red',
+        borderColor: '#b44dbd',
         backgroundColor: 'white',
         pointStyle: 'circle',
         pointRadius: 4,
@@ -138,3 +122,4 @@ const WeatherInformations = ({city}: WeatherInformationsProps) => {
 }
 
 export { WeatherInformations };
+export default WeatherInformations;

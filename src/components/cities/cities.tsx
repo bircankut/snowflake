@@ -1,5 +1,4 @@
 import React from "react";
-import type { NextPage } from 'next'
 import style from './cities.module.css'
 import Link from "next/link";
 
