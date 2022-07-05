@@ -13,6 +13,7 @@
   border: none;
   color: darkgrey;
   margin:0px 10px;
+  font-family: 'Montserrat', sans-serif;
 }
 .buttonSelected{
   background-color: transparent;
@@ -20,6 +21,7 @@
   color: #fafafa;
   margin:0px 10px;
   border-bottom: 1px solid white;
+  font-family: 'Montserrat', sans-serif;
 }
 .hr{
   display: block; height: 1px;

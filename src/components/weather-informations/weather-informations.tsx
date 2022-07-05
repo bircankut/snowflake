@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useMemo, useState} from "react"
 import style from './weather-informations.module.css'
 import useSWR from "swr"
 import {HistoryResponse} from "../../types/types"
@@ -89,9 +89,25 @@ const WeatherInformations = ({city}: WeatherInformationsProps) => {
         ),
       temperature: day.temp_c,
       wind: day.wind_mph,
-      precepitation: day.precip_mm,
+      humidity: day.humidity,
     }
   )).filter((el, index) => index % 3 === 0)
+
+
+
+  const color = useMemo(() => {
+    if (typeof document === 'undefined') {
+      return;
+    }
+
+    // @ts-ignore
+    var ctx = document.getElementById('line-chart').getContext("2d")
+    var gradient = ctx.createLinearGradient(0, 0, 0, 400);
+    gradient.addColorStop(0, '#6b0098');
+    gradient.addColorStop(1, '#b44dbd');
+    return gradient;
+  }, [])
+
 
   const dt = {
     labels: time?.map((el)=>el.time),
@@ -99,8 +115,7 @@ const WeatherInformations = ({city}: WeatherInformationsProps) => {
       {
         label: '',
         data: time?.map((el)=> el[selectedData as keyof typeof el] || el.temperature),
-        color: '#918aa0',
-        borderColor: '#820BBB',
+        borderColor: color || 'red',
         backgroundColor: 'white',
         pointStyle: 'circle',
         pointRadius: 4,
@@ -111,11 +126,11 @@ const WeatherInformations = ({city}: WeatherInformationsProps) => {
 
   return(
     <div className={style.weatherInformations}>
-      <Line data={dt} options={options as any} updateMode={"resize"} height={"100%"} />
+      <Line id="line-chart" data={dt} options={options as any} updateMode={"resize"} height={"100%"} />
       <hr className={style.hr}/>
       <div className={style.buttonBox}>
         <button className={selectedData === 'temperature' ? `${style.buttonSelected}`: `${style.button}`} onClick={()=> select('temperature')}>Temperature</button>
-        <button className={selectedData === 'precepitation' ? `${style.buttonSelected}`: `${style.button}`} onClick={()=> select('precepitation')}>Precepitation</button>
+        <button className={selectedData === 'humidity' ? `${style.buttonSelected}`: `${style.button}`} onClick={()=> select('humidity')}>Humidity</button>
         <button className={selectedData === 'wind' ? `${style.buttonSelected}`: `${style.button}`} onClick={()=> select('wind')}>Wind</button>
       </div>
     </div>
