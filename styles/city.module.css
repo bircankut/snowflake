@@ -4,7 +4,7 @@
   background-position: center;
   background-size: cover;
 }
-.context{
+.context {
   height: calc(100vh - 50px);
-  background-color:rgba(55,52,77,0.95) ;
+  background-color: rgba(55, 52, 77, 0.95);
 }

@@ -1,13 +1,13 @@
 import type { NextPage } from 'next'
 import styles from '../styles/Home.module.css'
-import React from "react"
-import Link from "next/link"
+import React from 'react'
+import Link from 'next/link'
 
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.iconBox}>
-        <img className={styles.imageContainer} src='/landingIcon.png'/>
+        <img className={styles.imageContainer} src="/landingIcon.png" />
       </div>
       <span className={styles.weatherHeader}>Choice Your City</span>
       <ul className={styles.buttonBox}>

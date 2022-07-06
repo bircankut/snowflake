@@ -1,11 +1,9 @@
-import React from "react";
+import React from 'react'
 import style from './city-nav-bar.module.css'
-import Link from "next/link";
+import Link from 'next/link'
 
-interface CityNavBarProps {}
-
-const CityNavBar = ({}: CityNavBarProps) => {
-  return(
+const CityNavBar = () => {
+  return (
     <ul className={`${style.cities} ${style.font}`}>
       <li>
         <Link href="/berlin">

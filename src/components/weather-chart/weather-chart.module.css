@@ -3,28 +3,30 @@
   padding: 0 100px;
   margin-bottom: 40px;
 }
-.buttonBox{
+.buttonBox {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.button{
+.button {
   background-color: transparent;
   border: none;
   color: darkgrey;
-  margin:0px 10px;
+  margin: 0 10px;
   font-family: 'Montserrat', sans-serif;
 }
-.buttonSelected{
+.buttonSelected {
   background-color: transparent;
   border: none;
   color: #fafafa;
-  margin:0px 10px;
+  margin: 0 10px;
   border-bottom: 1px solid white;
   font-family: 'Montserrat', sans-serif;
 }
-.hr{
-  display: block; height: 1px;
-  border: 0; border-top: 1px solid #918aa0;
-   padding: 0;
+.hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #918aa0;
+  padding: 0;
 }

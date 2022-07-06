@@ -3,12 +3,12 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 10px 0px 20px;
+  padding: 0 10px 0 20px;
   height: inherit;
   width: 200px;
-  border-left: 2px solid #4B485E;
+  border-left: 2px solid #4b485e;
 }
-.dateText{
+.dateText {
   font-size: 15px;
   font-family: 'Montserrat', sans-serif;
   color: #fafafa;

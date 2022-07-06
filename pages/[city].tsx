@@ -7,35 +7,41 @@ import style from '../styles/city.module.css'
 import { Information } from '../src/components/information/information'
 import { WeeklyWeather } from '../src/components/weekly-weather/weekly-weather'
 
-const DynamicWeatherInformations = dynamic(() => import("../src/components/weather-chart/weather-chart"), {
-  suspense: true,
-  ssr: false
-});
+const DynamicWeatherInformations = dynamic(
+  () => import('../src/components/weather-chart/weather-chart'),
+  {
+    suspense: true,
+    ssr: false,
+  }
+)
 
-const TimeZones: { [key: string]: string; } = {
-  'berlin': 'Europe/Berlin',
-  'london': 'Europe/London',
-  'tokyo': 'Asia/Tokyo',
+const TimeZones: { [key: string]: string } = {
+  berlin: 'Europe/Berlin',
+  london: 'Europe/London',
+  tokyo: 'Asia/Tokyo',
 }
 
 const City = () => {
   const router = useRouter()
-  let { city } = router.query;
-  city = ((city as string) || "").toLowerCase();
+  let { city } = router.query
+  city = ((city as string) || '').toLowerCase()
 
-  const fetcher = (url: string) => fetch(url).then((r) => r.json());
-  const { data } = useSWR(`/api/current?q=${city}`, fetcher);
-  const day = new Date().toLocaleString('en-us', {  weekday: 'long' });
+  const fetcher = (url: string) => fetch(url).then((r) => r.json())
+  const { data } = useSWR(`/api/current?q=${city}`, fetcher)
+  const day = new Date().toLocaleString('en-us', { weekday: 'long' })
 
   return (
-    <div className={style.city} style={{backgroundImage: `url("/${city}.jpg")`}}>
-      <Header day={day} timeZone={TimeZones[city as string]}/>
+    <div
+      className={style.city}
+      style={{ backgroundImage: `url("/${city}.jpg")` }}
+    >
+      <Header day={day} timeZone={TimeZones[city as string]} />
       <div className={style.context}>
-        <Information data={data} city={city as string}/>
+        <Information data={data} city={city as string} />
         <Suspense fallback="...">
           <DynamicWeatherInformations city={city as string} />
         </Suspense>
-        <WeeklyWeather city={city as string}/>
+        <WeeklyWeather city={city as string} />
       </div>
     </div>
   )
