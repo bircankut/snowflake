@@ -7,7 +7,7 @@ import style from '../styles/city.module.css'
 import { Information } from '../src/components/information/information'
 import { WeeklyWeather } from '../src/components/weekly-weather/weekly-weather'
 
-const DynamicWeatherInformations = dynamic(() => import("../src/components/weather-informations/weather-informations"), {
+const DynamicWeatherInformations = dynamic(() => import("../src/components/weather-chart/weather-chart"), {
   suspense: true,
   ssr: false
 });

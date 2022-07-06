@@ -1,10 +1,10 @@
 import React from "react";
-import style from './cities.module.css'
+import style from './city-nav-bar.module.css'
 import Link from "next/link";
 
-interface CitiesProps {}
+interface CityNavBarProps {}
 
-const Cities = ({}: CitiesProps) => {
+const CityNavBar = ({}: CityNavBarProps) => {
   return(
     <ul className={`${style.cities} ${style.font}`}>
       <li>
@@ -26,4 +26,4 @@ const Cities = ({}: CitiesProps) => {
   )
 }
 
-export default Cities
+export default CityNavBar

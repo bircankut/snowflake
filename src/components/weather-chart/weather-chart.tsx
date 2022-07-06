@@ -1,5 +1,5 @@
 import React, {useMemo, useState} from "react"
-import style from './weather-informations.module.css'
+import style from './weather-chart.module.css'
 import useSWR from "swr"
 import {HistoryResponse} from "../../types/types"
 import {
@@ -26,7 +26,7 @@ ChartJS.register(
   ChartDataLabels
 );
 
-interface WeatherInformationsProps {
+interface WeatherChartProps {
   city: string;
 }
 
@@ -69,7 +69,7 @@ const options = {
   },
 };
 
-const WeatherInformations = ({city}: WeatherInformationsProps) => {
+const WeatherChart = ({city}: WeatherChartProps) => {
   const [selectedData, setSelectedData] = useState('temperature');
 
   function select(sel: string){
@@ -121,5 +121,5 @@ const WeatherInformations = ({city}: WeatherInformationsProps) => {
   )
 }
 
-export { WeatherInformations };
-export default WeatherInformations;
+export { WeatherChart };
+export default WeatherChart;

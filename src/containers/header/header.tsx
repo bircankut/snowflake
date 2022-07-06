@@ -1,6 +1,6 @@
 import React from "react";
 import style from './header.module.css';
-import Cities from "../../components/cities/cities";
+import CityNavBar from "../../components/city-nav-bar/city-nav-bar";
 import {Logo} from "../../components/logo/logo";
 import {DateInformation} from "../../components/date-information/date-information";
 
@@ -13,7 +13,7 @@ const Header = ({day, timeZone}: HeaderProps) => {
   return (
     <header className={style.header}>
       <Logo/>
-      <Cities/>
+      <CityNavBar/>
       <DateInformation day={day} timeZone={timeZone}/>
     </header>
   );
