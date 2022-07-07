@@ -9,24 +9,26 @@ const Home: NextPage = () => {
       <div className={styles.iconBox}>
         <img className={styles.imageContainer} src="/landing-icon.svg" />
       </div>
-      <span className={styles.weatherHeader}>Choice Your City</span>
-      <ul className={styles.buttonBox}>
-        <li className={styles.button}>
-          <Link href="/berlin">
-            <a>Berlin</a>
-          </Link>
-        </li>
-        <li className={styles.button}>
-          <Link href="/london">
-            <a>London</a>
-          </Link>
-        </li>
-        <li className={styles.button}>
-          <Link href="/tokyo">
-            <a>Tokyo</a>
-          </Link>
-        </li>
-      </ul>
+      <div className={styles.textBox}>
+        <span className={styles.weatherHeader}>Choice Your City</span>
+        <ul className={styles.buttonBox}>
+          <li className={styles.button}>
+            <Link href="/berlin">
+              <a>Berlin</a>
+            </Link>
+          </li>
+          <li className={styles.button}>
+            <Link href="/london">
+              <a>London</a>
+            </Link>
+          </li>
+          <li className={styles.button}>
+            <Link href="/tokyo">
+              <a>Tokyo</a>
+            </Link>
+          </li>
+        </ul>
+      </div>
     </div>
   )
 }
