@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 type Data = {
   name: string
 }
-const key = process.env.API_KEY
+
 
 export default async function handler(
   req: NextApiRequest,
@@ -15,7 +15,7 @@ export default async function handler(
   const end_dt = req.query['end_dt']
 
   const response = await fetch(
-    `http://api.weatherapi.com/v1/history.json?key=${key}&q=${city}&dt=${dt}&end_dt=${end_dt}`
+    `http://api.weatherapi.com/v1/history.json?key=${process.env.API_KEY}&q=${city}&dt=${dt}&end_dt=${end_dt}`
   )
   const result = await response.json()
   res.json(result)

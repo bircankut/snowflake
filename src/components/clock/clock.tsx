@@ -14,7 +14,7 @@ const Clock = ({ timeZone }: ClockProps) => {
 
   useEffect(() => {
     const _formatter = new Intl.DateTimeFormat([], {
-      timeZone: timeZone,
+      timeZone: timeZone ,
       hour: 'numeric',
       minute: 'numeric',
       second: 'numeric',
@@ -33,7 +33,7 @@ const Clock = ({ timeZone }: ClockProps) => {
         clearInterval(intervalId)
       }
     }
-  }, [intervalId])
+  }, [])
 
   const timeText = formatter && formatter.format(time)
 

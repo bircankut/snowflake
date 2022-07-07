@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.iconBox}>
-        <img className={styles.imageContainer} src="/landingIcon.png" />
+        <img className={styles.imageContainer} src="/landing-icon.svg" />
       </div>
       <span className={styles.weatherHeader}>Choice Your City</span>
       <ul className={styles.buttonBox}>
