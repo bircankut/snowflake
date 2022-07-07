@@ -3,11 +3,21 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding-top: 50px;
 }
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .city{
+    padding-top: 0;
+  }
+}
+
 .context {
   height: 100%;
+  width: 100%;
   background-color: rgba(55, 52, 77, 0.95);
 }
+
 .logoBox{
   display: none;
   position: absolute;

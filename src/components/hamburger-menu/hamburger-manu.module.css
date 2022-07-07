@@ -11,8 +11,8 @@
     display: block;
     position: fixed;
     height: 100vh;
-    width: 30%;
-    background-color: tomato;
+    width: 50%;
+    background-color: #4b485e;
   }
 }
 .logoBox{

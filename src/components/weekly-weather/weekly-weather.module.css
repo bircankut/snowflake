@@ -1,9 +1,10 @@
 .weeklyWeather {
-  height: 30%;
-  padding: 20px 100px;
+  height: 150px;
+  width: 100vw;
 }
 .weekBox {
   height: 100%;
+  width: 50%;
   display: flex;
   flex-direction: row;
   background-color: #4b485e;

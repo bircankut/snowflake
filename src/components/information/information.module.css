@@ -1,20 +1,40 @@
 .information {
+  top:50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 25%;
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .information{
+    display: flex;
+    flex-direction: column;
+  }
 }
 .cityTemputureBox {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 20px;
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .cityTemputureBox{
+    justify-content: center;
+    padding: 50px 0 0 0;
+  }
 }
 .cityInformationBox {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .cityInformationBox{
+    justify-content: center;
+    padding: 20px;
+  }
 }
 
 .weatherTemperature {
@@ -26,6 +46,13 @@
   height: 150px;
   width: auto;
 }
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .icons{
+    height: 200px;
+    width: auto;
+  }
+}
 
 .cityText {
   font-size: 50px;
@@ -34,6 +61,14 @@
   color: #fafafa;
   letter-spacing: 10px;
 }
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .cityText{
+    font-size: 30px;
+  }
+}
+
 .weatherText {
   font-size: 15px;
   font-style: italic;
@@ -45,5 +80,14 @@
   height: 80px;
   width: 2px;
   background-color: #4b485e;
-  margin-top: 30px;
+  margin: 35px 20px 0 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .line{
+    height: 2px;
+    width: 100%;
+    margin: 0;
+  }
 }
