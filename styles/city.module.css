@@ -5,6 +5,20 @@
   background-size: cover;
 }
 .context {
-  height: calc(100vh - 50px);
+  height: 100%;
   background-color: rgba(55, 52, 77, 0.95);
+}
+.logoBox{
+  display: none;
+  position: absolute;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .logoBox{
+    display: flex;
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
 }
