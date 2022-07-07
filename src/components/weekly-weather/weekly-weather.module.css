@@ -1,12 +1,38 @@
 .weeklyWeather {
   height: 150px;
   width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .weeklyWeather{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+  }
 }
 .weekBox {
   height: 100%;
-  width: 50%;
+  width: 70%;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   background-color: #4b485e;
   border-radius: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .weekBox{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow-x: scroll;
+  }
 }

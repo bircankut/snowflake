@@ -8,6 +8,7 @@
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .city{
+    overflow: scroll;
     padding-top: 0;
   }
 }
@@ -16,6 +17,13 @@
   height: 100%;
   width: 100%;
   background-color: rgba(55, 52, 77, 0.95);
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .context{
+    overflow: scroll;
+  }
 }
 
 .logoBox{
