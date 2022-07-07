@@ -1,13 +1,29 @@
 .weatherInformations {
-  height: 250px;
+  height: 200px;
   padding: 0 100px;
   margin-bottom: 40px;
 }
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .weatherInformations{
+    padding: 0 20px;
+  }
+}
+
 .buttonBox {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .buttonBox {
+    justify-content: space-between;
+  }
+}
+
 .button {
   background-color: transparent;
   border: none;
@@ -15,6 +31,7 @@
   margin: 0 10px;
   font-family: 'Montserrat', sans-serif;
 }
+
 .buttonSelected {
   background-color: transparent;
   border: none;
