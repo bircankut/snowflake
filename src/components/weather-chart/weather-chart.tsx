@@ -121,7 +121,7 @@ const WeatherChart = ({ city }: WeatherChartProps) => {
       <Line
         id="line-chart"
         data={dt}
-        options={options as any}
+        options={options as never}
         updateMode={'resize'}
         height={'100%'}
       />
