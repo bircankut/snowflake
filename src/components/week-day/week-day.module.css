@@ -8,8 +8,8 @@
   padding: 20px;
 }
 .icon {
-  height: 40%;
-  width: 40%;
+  height: 55px;
+  width: auto;
 }
 .temperatureText {
   font-family: 'Lato', sans-serif;
