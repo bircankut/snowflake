@@ -22,13 +22,26 @@
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .context{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: scroll;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  /* For mobile phones: */
+  .context{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     overflow: scroll;
   }
 }
 
 .logoBox{
   display: none;
-  position: absolute;
+  position: fixed;
 }
 
 @media only screen and (max-width: 768px) {
@@ -38,5 +51,26 @@
     background-color: transparent;
     outline: none;
     border: none;
+  }
+}
+
+.box{
+  display: none;
+}
+.text{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .box{
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fafafa;
+    background-color: #37344d;
   }
 }

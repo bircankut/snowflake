@@ -1,9 +1,6 @@
 .container{
   display: none;
-  position: fixed;
-  height: 100vh;
-  width: 30%;
-  background-color: tomato;
+
 }
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
@@ -20,4 +17,18 @@
   background-color: transparent;
   outline: none;
   border: none;
+}
+
+.linkBox {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 50px;
+}
+.text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: #fafafa;
 }
