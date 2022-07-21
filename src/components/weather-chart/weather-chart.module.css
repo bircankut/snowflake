@@ -32,6 +32,13 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+@media only screen and (max-width: 280px) {
+  /* For mobile phones: */
+  .button{
+    font-size: 10px;
+  }
+}
+
 .buttonSelected {
   background-color: transparent;
   border: none;
@@ -40,6 +47,14 @@
   border-bottom: 1px solid white;
   font-family: 'Montserrat', sans-serif;
 }
+
+@media only screen and (max-width: 280px) {
+  /* For mobile phones: */
+  .buttonSelected{
+    font-size: 10px;
+  }
+}
+
 .hr {
   display: block;
   height: 1px;

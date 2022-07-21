@@ -41,16 +41,17 @@
   font-family: 'Montserrat', sans-serif;
   color: #fafafa;
 }
-.icons {
-  height: 150px;
-  width: auto;
-}
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 375px) {
   /* For mobile phones: */
-  .icons{
-    height: 200px;
-    width: auto;
+  .weatherTemperature{
+    font-size: 40px;
   }
+}
+
+.icons {
+  height: 100px;
+  width: auto;
 }
 
 .cityText {
@@ -79,7 +80,7 @@
   height: 80px;
   width: 2px;
   background-color: #4b485e;
-  margin: 35px 20px 0 20px;
+  margin: 10px 20px 0 20px;
 }
 
 @media only screen and (max-width: 768px) {

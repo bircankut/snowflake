@@ -16,25 +16,15 @@
 .context {
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   background-color: rgba(55, 52, 77, 0.95);
 }
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .context{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    overflow: scroll;
-  }
-}
-
-@media only screen and (max-width: 1023px) {
-  /* For mobile phones: */
-  .context{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     overflow: scroll;
   }
 }
