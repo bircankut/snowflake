@@ -14,17 +14,17 @@ const HamburgerMenu = ({hamburgerMenu}: HamburgerMenuProps) => {
        <Logo/>
      </button>
       <ul className={style.linkBox}>
-        <li className={style.text}>
+        <li className={style.text} onClick={hamburgerMenu}>
           <Link href="/berlin">
             <a>Berlin</a>
           </Link>
         </li>
-        <li className={style.text}>
+        <li className={style.text} onClick={hamburgerMenu}>
           <Link href="/london">
             <a>London</a>
           </Link>
         </li>
-        <li className={style.text}>
+        <li className={style.text} onClick={hamburgerMenu}>
           <Link href="/tokyo">
             <a>Tokyo</a>
           </Link>

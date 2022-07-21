@@ -14,6 +14,7 @@ import {
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
+import moment from 'moment'
 
 ChartJS.register(
   CategoryScale,
@@ -88,11 +89,7 @@ const WeatherChart = ({ city }: WeatherChartProps) => {
 
   const time = data?.forecast?.forecastday?.[0].hour
     ?.map?.((day) => ({
-      time: new Date(day.time).toLocaleTimeString('en-US', {
-        timeZone: 'UTC',
-        hour12: true,
-        hour: 'numeric',
-      }),
+      time: moment(new Date(day.time), "H:s").format("h A"),
       temperature: day.temp_c,
       wind: day.wind_mph,
       humidity: day.humidity,
