@@ -8,7 +8,6 @@ import { Information } from '../src/components/information/information'
 import { WeeklyWeather } from '../src/components/weekly-weather/weekly-weather'
 import { HamburgerMenu } from '../src/components/hamburger-menu/hamburger-menu'
 import { Logo } from '../src/components/logo/logo'
-import { Clock } from '../src/components/clock/clock'
 
 const DynamicWeatherInformations = dynamic(
   () => import('../src/components/weather-chart/weather-chart'),

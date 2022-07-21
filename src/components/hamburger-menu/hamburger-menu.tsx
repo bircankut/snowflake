@@ -4,13 +4,13 @@ import style from './hamburger-menu.module.css'
 import Link from 'next/link'
 
 interface HamburgerMenuProps{
-  hamburgerMenu: Function;
+  hamburgerMenu: () => void;
 }
 
 const HamburgerMenu = ({hamburgerMenu}: HamburgerMenuProps) => {
   return (
     <div className={style.container}>
-     <button className={style.logoBox} onClick={()=>hamburgerMenu()}>
+     <button className={style.logoBox} onClick={hamburgerMenu}>
        <Logo/>
      </button>
       <ul className={style.linkBox}>
