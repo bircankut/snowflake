@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/home.module.css'
 import React from 'react'
 import Link from 'next/link'
+import { CITIES } from "../src/types/city";
 
 const Home: NextPage = () => {
   return (
@@ -12,21 +13,13 @@ const Home: NextPage = () => {
       <div className={styles.textBox}>
         <span className={styles.weatherHeader}>Choice Your City</span>
         <ul className={styles.buttonBox}>
-          <li className={styles.button}>
-            <Link href="/berlin">
-              <a>Berlin</a>
-            </Link>
-          </li>
-          <li className={styles.button}>
-            <Link href="/london">
-              <a>London</a>
-            </Link>
-          </li>
-          <li className={styles.button}>
-            <Link href="/tokyo">
-              <a>Tokyo</a>
-            </Link>
-          </li>
+          {CITIES.map((cityName) => (
+            <li key={cityName} className={styles.button}>
+              <Link href={`/${cityName}`}>
+                <a>{cityName}</a>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
