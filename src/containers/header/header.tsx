@@ -5,16 +5,17 @@ import { Logo } from '../../components/logo/logo'
 import { DateInformation } from '../../components/date-information/date-information'
 
 interface HeaderProps {
-  day: string
   timeZone: string
 }
 
-const Header = ({ day, timeZone }: HeaderProps) => {
+const Header = ({ timeZone }: HeaderProps) => {
+  const currentDay = new Date().toLocaleString('en-us', { weekday: 'long' })
+
   return (
     <header className={style.header}>
       <Logo />
       <CityNavBar />
-      <DateInformation day={day} timeZone={timeZone} />
+      <DateInformation day={currentDay} timeZone={timeZone} />
     </header>
   )
 }

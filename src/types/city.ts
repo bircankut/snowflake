@@ -1,7 +1,5 @@
 export enum CITY {
-  BERLIN = "Berlin",
-  LONDON = "London",
-  TOKYO = "Tokyo",
+  BERLIN = "berlin",
+  LONDON = "london",
+  TOKYO = "tokyo",
 }
-
-export const CITIES = [CITY.BERLIN, CITY.LONDON, CITY.TOKYO] as const;

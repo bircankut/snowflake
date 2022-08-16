@@ -8,6 +8,8 @@ import { Information } from '../src/components/information/information'
 import { WeeklyWeather } from '../src/components/weekly-weather/weekly-weather'
 import { HamburgerMenu } from '../src/components/hamburger-menu/hamburger-menu'
 import { Logo } from '../src/components/logo/logo'
+import { TIME_ZONES } from '../src/constants/city'
+import { CITY } from '../src/types/city'
 
 const DynamicWeatherInformations = dynamic(
   () => import('../src/components/weather-chart/weather-chart'),
@@ -17,42 +19,32 @@ const DynamicWeatherInformations = dynamic(
   }
 )
 
-const TimeZones: { [key: string]: string } = {
-  berlin: 'Europe/Berlin',
-  london: 'Europe/London',
-  tokyo: 'Asia/Tokyo',
-}
-
 const City = () => {
   const router = useRouter()
-  let { city } = router.query
-  city = ((city as string) || '').toLowerCase()
-  const [menu, setMenu]= useState(false)
+  const city = ((router.query.city as string) || '').toLowerCase() as CITY
+  const [isMenuActive, setIsMenuActive] = useState(false)
+  const { data: currentWeatherData } = useSWR(`/api/current?q=${city}`)
 
-  function hamburgerMenu(){
-    setMenu(!menu)
+  const toggleMenu = () => {
+    setIsMenuActive(!isMenuActive)
   }
-
-  const fetcher = (url: string) => fetch(url).then((r) => r.json())
-  const { data } = useSWR(`/api/current?q=${city}`, fetcher)
-  const day = new Date().toLocaleString('en-us', { weekday: 'long' })
 
   return (
     <div
       className={style.city}
       style={{ backgroundImage: `url("/${city}.jpg")` }}
     >
-        <button className={style.logoBox} onClick={()=> hamburgerMenu()}>
-          <Logo/>
-        </button>
-      {menu && <HamburgerMenu hamburgerMenu={hamburgerMenu}/>}
-      <Header day={day} timeZone={TimeZones[city as string]} />
+      <button className={style.logoBox} onClick={toggleMenu}>
+        <Logo />
+      </button>
+      {isMenuActive && <HamburgerMenu toggleMenu={toggleMenu} />}
+      <Header timeZone={TIME_ZONES[city]} />
       <div className={style.context}>
-        <Information data={data} city={city as string} />
+        <Information data={currentWeatherData} city={city} />
         <Suspense fallback="...">
-          <DynamicWeatherInformations city={city as string} />
+          <DynamicWeatherInformations city={city} />
         </Suspense>
-        <WeeklyWeather city={city as string} />
+        <WeeklyWeather city={city} />
       </div>
     </div>
   )

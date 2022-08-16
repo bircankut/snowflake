@@ -10,7 +10,7 @@ import {
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
@@ -89,7 +89,7 @@ const WeatherChart = ({ city }: WeatherChartProps) => {
 
   const time = data?.forecast?.forecastday?.[0].hour
     ?.map?.((day) => ({
-      time: moment(new Date(day.time.replace(/-/g, "/")), "H:s").format("h A"),
+      time: moment(new Date(day.time.replace(/-/g, '/')), 'H:s').format('h A'),
       temperature: day.temp_c,
       wind: day.wind_mph,
       humidity: day.humidity,

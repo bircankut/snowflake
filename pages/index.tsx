@@ -2,7 +2,8 @@ import type { NextPage } from 'next'
 import styles from '../styles/home.module.css'
 import React from 'react'
 import Link from 'next/link'
-import { CITIES } from "../src/types/city";
+import { CITIES } from "../src/constants/city";
+import { CITY_NAMES } from "../src/constants/city";
 
 const Home: NextPage = () => {
   return (
@@ -16,7 +17,7 @@ const Home: NextPage = () => {
           {CITIES.map((cityName) => (
             <li key={cityName} className={styles.button}>
               <Link href={`/${cityName}`}>
-                <a>{cityName}</a>
+                <a>{CITY_NAMES[cityName]}</a>
               </Link>
             </li>
           ))}
