@@ -13,7 +13,7 @@ interface InformationProps {
 const Information = ({ data, city }: InformationProps) => {
   return (
     <div className={style.information}>
-      <div className={style.cityTemputureBox}>
+      <div className={style.cityTemperatureBox}>
         <img
           className={style.icons}
           src={WEATHER_ICONS[data?.current?.condition.text]}
