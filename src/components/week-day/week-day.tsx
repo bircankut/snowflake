@@ -1,5 +1,5 @@
 import React from 'react'
-import { ICONS } from '../information/information'
+import { WEATHER_ICONS } from '../../constants/weather'
 import style from './week-day.module.css'
 
 interface WeeklyDayProps {
@@ -14,7 +14,7 @@ const WeeklyDay = ({ day, text, date }: WeeklyDayProps) => {
   return (
     <div className={style.weekDay}>
       <span className={style.temperatureText}>{day}</span>
-      <img className={style.icon} src={ICONS[text]} alt="weather icon" />
+      <img className={style.icon} src={WEATHER_ICONS[text]} alt="weather icon" />
       <span className={style.temperatureText}>{currentDay}</span>
     </div>
   )
