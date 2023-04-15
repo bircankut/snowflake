@@ -11,7 +11,7 @@ export default async function handler(
 ) {
   const city = req.query['q']
   const response = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=${process.env.API_KEY}&q=${city}`
+    `http://api.weatherapi.com/v1/current.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${city}`
   )
   const result = await response.json()
   res.json(result)

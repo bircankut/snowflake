@@ -15,7 +15,7 @@ export default async function handler(
   const end_dt = req.query['end_dt']
 
   const response = await fetch(
-    `http://api.weatherapi.com/v1/history.json?key=${process.env.API_KEY}&q=${city}&dt=${dt}&end_dt=${end_dt}`
+    `http://api.weatherapi.com/v1/history.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${city}&dt=${dt}&end_dt=${end_dt}`
   )
   const result = await response.json()
   res.json(result)

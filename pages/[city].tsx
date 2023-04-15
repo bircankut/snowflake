@@ -23,7 +23,8 @@ const City = () => {
   const router = useRouter()
   const city = ((router.query.city as string) || '').toLowerCase() as CITY
   const [isMenuActive, setIsMenuActive] = useState(false)
-  const { data: currentWeatherData } = useSWR(`/api/current?q=${city}`)
+  const fetcher = (url: string) => fetch(url).then((r) => r.json())
+  const { data: currentWeatherData } = useSWR(`/api/current?q=${city}`, fetcher)
 
   const toggleMenu = () => {
     setIsMenuActive(!isMenuActive)
