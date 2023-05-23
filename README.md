@@ -1,31 +1,117 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Snowflake
 
-## Getting Started
+Snowflake is a project created with Next.js and Vercel technologies that gives us information about the weather conditions of Berlin, Tokyo and London.
 
-First, run the development server:
+![screenshot](public/images/Screenshot.png)
+![screenshot2](public/images/Screenshot2.png)
+![screenshot3](public/images/Screenshot3.png)
+
+## Tech Stack
+This project created with:
+- ReactJS
+- NextJS
+
+## Run Locally
+
+Clone the project
+
+  
 
 ```bash
-npm run dev
-# or
-yarn dev
+
+git clone https://github.com/bircankut/snowflake
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Go to the project directory
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/current.ts`.
+  
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
 
-## Learn More
+cd snowflake
 
-To learn more about Next.js, take a look at the following resources:
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Install dependencies
+
+  
+
+```bash
+
+yarn install
+
+```
+
+  
+
+Start the server
+
+  
+
+```bash
+
+yarn dev
+
+```
+
+## Environment Variables
+
+  
+
+To run this project, you will need to add the following environment variables to your .env.local file
+
+`NEXT_PUBLIC_WEATHER_API_KEY`='your enviroment variable goes here'
+
+## Authors
+- [@bircankut](https://www.github.com/bircankut)
+
+## Acknowledgements
+- [This project's design] (https://dribbble.com/shots/3987420-Weathly-Weather-App-UI)
+
+## API Reference
+
+  
+
+#### Get current week's weather
+
+  
+
+```http
+
+GET /api/history
+
+```
+
+  
+
+| Parameter | Type       | Description                  |
+| :-------- | :--------- | :-------------------------   |
+|    `q`    |  `city`    |  **Required**. Selected city |
+|   `dt`    |  `string`    |  **Required**. First date    |
+| `end_dt`  |  `string`    | **Required**. Last date      |
+
+  
+
+#### Get current day's weather
+
+  
+
+```http
+
+GET /api/current
+
+```
+
+  
+
+| Parameter | Type | Description |
+| :-------- | :------- | :-------------------------------- |
+|  `q`      |  `city`  |  **Required**. Selected city      | 
 
 ## Deploy on Vercel
 
